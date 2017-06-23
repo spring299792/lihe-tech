@@ -52,7 +52,7 @@ class Welcome extends CI_Controller {
 	}
 
 	public function index(){
-        $this->load->view('Index/first');
+        $this->load->view('first');
     }
 
 	public function info($name,$lang){
@@ -61,9 +61,10 @@ class Welcome extends CI_Controller {
             $name=strtolower($name);
             //如果lang为空，则显示第一页
             if(!$lang){
-                $this->load->view('Index/first');
+                $this->load->view('first');
             }else{
                 if(in_array($lang,$this->lang)){
+                    $this->assign('name',$name);
                     echo "333";
                 }else{
                     show_404();
