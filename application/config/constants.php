@@ -87,6 +87,8 @@ defined('EXIT__AUTO_MAX')      OR define('EXIT__AUTO_MAX', 125); // highest auto
 
 define('WEB_NAME', '利和科技有限公司');//站点名称
 define('WEB_KEYWORDS', '利和科技');//站点名称
+define('WEB_NAME_EN', 'LiHe Technology');//站点名称
+define('WEB_KEYWORDS_EN', 'LiHe Technology');//站点名称
 define('WEB_URL', 'http://localhost/lihe-tech/');//站点地址
 define('__STATIC__', WEB_URL."static/");//站点静态地址
 
