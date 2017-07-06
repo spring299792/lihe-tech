@@ -10,7 +10,7 @@ class Welcome extends CI_Controller {
 	function __construct(){
 		parent :: __construct();
 		$this->lang = array('en','cn');
-		$this->types = array('Index','Info','Lihe','Yanjiu','Xiaoshi','Zhongshi','Fenxi','Zhiliang','Yuanliao','Chjsc','Jhpj','Hse','Jiankang','Anquan','Huanbao','Keji','Contact');
+		$this->types = array('Index','Info','Lihe','Yanjiu','Xiaoshi','Zhongshi','Fenxi','Zhiliang','Yuanliao','Chjsc','Jhpj','Hse','Jiankang','Anquan','Huanbao','Keji','Contact','Search');
 
 		$pro = $this->getPros();
 		$this->pro = $pro;
@@ -92,6 +92,14 @@ class Welcome extends CI_Controller {
                         $data['next']=$next;
                         $data['page']=$p;
                         $this->load->view('keji',$data);
+                    }elseif($type == 'search'){
+                        $name=$_POST['search'];
+                        $name=strtoupper($name);
+                        if(!$lang){
+                            $lang=$_POST['l'];
+                        }
+                        $data['list'] = $this->db->query("select * from think_product where name like '%".$name."%'")->result_array();
+                        $this->load->view('search',$data);
                     }else{ // 查询对应内容
                         // 图片
                         $pics = array(
@@ -181,6 +189,27 @@ class Welcome extends CI_Controller {
         //echo $this->db->last_query();
         return $list;
     }
+
+    /**
+     * 科技前沿详情页
+     */
+    public function kj_view($id){
+        $id = intval($id);
+        if($id>0){
+            $row = $this->db->where('id',$id)->get('think_keji')->row_array();
+            if(!empty($row)){
+                $data = $this->_common('Keji',$row['lang']);
+                $data['vo'] = $row;
+                $this->load->view('kj_view',$data);
+            }else{
+                show_404();
+            }
+            //print_r($row);
+        }else{
+            show_404();
+        }
+    }
+
 
 
 }

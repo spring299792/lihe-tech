@@ -23,12 +23,12 @@
     </div>
     <div class="page_content">
         <div class="page_left" style=" height:391px; background-image:url(<?=__STATIC__;?>client/keji_<?=$lang?>.gif);">
-            <div style="width:210px; <?php if($lang == 'cn'):?> margin-top:27px;<?php else:?> margin-top:35px;<?php endif;?> font-weight:bold;">&nbsp;&nbsp;<?php if($lang == 'cn'):?><a href="<?=WEB_URL?><?=base_url();?><?=$name?>/index/l/cn">　　科技前沿</a><?php else:?><a href="<?=WEB_URL?><?=base_url();?><?=$name?>/index/l/en">Scientific and Technological Front</a><?php endif;?></div>
+            <div style="width:210px; <?php if($lang == 'cn'):?> margin-top:27px;<?php else:?> margin-top:35px;<?php endif;?> font-weight:bold;">&nbsp;&nbsp;　　 <img src="<?=__STATIC__;?>client/point.gif" style="position:relative; left:-5px;" /><?php if($lang == 'cn'):?><a href="<?=WEB_URL?><?=base_url();?><?=$name?>/index/l/cn">科技前沿</a><?php else:?><a href="<?=WEB_URL?><?=base_url();?><?=$name?>/index/l/en">Scientific and Technological Front</a><?php endif;?></div>
     </div>
     <div class="page_right">
         <div class="con_con"<?php if($lang == 'cn'):?>style="font-size:14px; letter-spacing:3px; text-indent:2em;" <?php else:?>style="font-size:13px; letter-spacing:0px; text-indent:0em;"<?php endif;?>>
             <?php foreach($list as $pvo):?>
-            <div class="pdf_li"><?php if($pvo['attach'] != ''):?><img src="<?=__STATIC__;?>client/pdf.jpg" /><?php else:?>&nbsp;&nbsp;&nbsp;<?php endif;?><a href="<?=WEB_URL?><?=base_url();?><?=$name?>/view/id/<?=$pvo['id']?>/l/<?=$lang?>"><?=$pvo['name']?><?php if($pvo['attach'] != ''):?>.pdf<?php endif;?></a></div>
+            <div class="pdf_li"><?php if($pvo['attach'] != ''):?><img src="<?=__STATIC__;?>client/pdf.jpg" /><?php else:?>&nbsp;&nbsp;&nbsp;<?php endif;?><a href="<?=WEB_URL?><?=base_url();?><?=$name?>/view/<?=$pvo['id']?>"><?=$pvo['name']?><?php if($pvo['attach'] != ''):?>.pdf<?php endif;?></a></div>
         <?php endforeach;?>
     </div>
     <div class="pages">

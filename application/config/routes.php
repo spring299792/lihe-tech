@@ -55,3 +55,5 @@ $route['translate_uri_dashes'] = FALSE;
 
 $route['^/'] = "Welcome/info/$1/$2";
 $route['^(:any)/index/l/(:any)'] = "Welcome/info/$1/$2";
+$route['^Keji/view/(:num)'] = "Welcome/kj_view/$1";
+

@@ -43,9 +43,8 @@
     </div>
     <div class="ban_nav" align="right">
         <a href="<?=WEB_URL?><?=base_url();?><?=$name?>/index/l/cn" style="position:relative; right:50px; top:15px;">中文版</a>　　　<a href="<?=WEB_URL?><?=base_url();?><?=$name?>/index/l/en" style="position:relative; right:50px; top:15px;">English</a>
-        <form name="form1" action="<?=WEB_URL?><?=base_url();?>/Search/index" method="post">
+        <form name="form1" action="<?=WEB_URL?><?=base_url();?>Search/index/l/<?=$lang?>" method="post">
             <input type="text" id="search" name="search" value="请输入产品关键字" /><input type="image" src="<?=__STATIC__;?>client/search.jpg" id="but" />
-            <input type="hidden" name="l" value="cn" />
         </form>
     </div>
 </div>
